@@ -30,7 +30,7 @@ void insertArrayIntoVector(T arr[], size_t size, std::vector<U> &vec) {
     vec.insert(vec.begin(), &arr[0], &arr[size]);
 }
 
-void shiftMotionPosition(std::vector<std::vector<float>> &cart_motion, float x, float y, float z) {
+void shiftMotionPosition(std::vector<std::vector<float> > &cart_motion, float x, float y, float z) {
     // change reference of cart_motion to shift whole trajectory in position
     for(int r=0; r < cart_motion.size(); ++r) {
         cart_motion[r][3] += x;
@@ -39,7 +39,7 @@ void shiftMotionPosition(std::vector<std::vector<float>> &cart_motion, float x, 
     }
 }
 
-void reserveVectorMatrix(std::vector< std::vector<float>> &mat, unsigned int n_rows, unsigned int n_cols) {
+void reserveVectorMatrix(std::vector< std::vector<float> > &mat, unsigned int n_rows, unsigned int n_cols) {
     // Memory allocated here is lost after leaving scope of this function
     mat.clear();
     for(int k = 0; k < n_rows; k++){
@@ -53,7 +53,7 @@ void reserveVectorMatrix(std::vector< std::vector<float>> &mat, unsigned int n_r
     std::cout << "Reserved vector matrix with dimensions: " << n_rows << " x " << n_cols << std::endl;
 }
 
-int loadVectorMatrixFromFile (std::string fileName, int cols, std::vector<std::vector<float>> &outMat)
+int loadVectorMatrixFromFile (std::string fileName, int cols, std::vector<std::vector<float> > &outMat)
 {
     std::ifstream in(fileName.data());
     if (!in)
@@ -79,7 +79,7 @@ int loadVectorMatrixFromFile (std::string fileName, int cols, std::vector<std::v
 }
 
 
-void saveVectorMatrixToFile (std::string fileName, const std::vector<std::vector<float>> &outMat)
+void saveVectorMatrixToFile (std::string fileName, const std::vector<std::vector<float> > &outMat)
 {
     std::ofstream out(fileName.data());
     if (!out)

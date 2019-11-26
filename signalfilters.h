@@ -50,8 +50,8 @@ private:
     const unsigned n_dims;
     const unsigned n_samples;
     double** filt_buf_2D;
-    unsigned ring_count = 0;
-    unsigned buf_count = 0;
+    unsigned ring_count;
+    unsigned buf_count;
 
 public:
 
@@ -60,7 +60,8 @@ public:
      * n_samples  number of buffer n_samples
      */
     MovingAvgFilter(unsigned n_dims, unsigned n_samples) : n_dims(n_dims), n_samples(n_samples) {
-
+        ring_count = 0;
+        buf_count = 0;
         filt_buf_2D = new double*[n_samples]; // allocate array of double pointers for n_samples
         for (int i=0; i < n_samples; i++) {
             filt_buf_2D[i] = new double[n_dims]; // allocate double array for n_dims
