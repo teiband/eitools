@@ -1,8 +1,11 @@
 #include "datautils.h"
 
-using namespace eitools::DataUtils;
+namespace eitools {
+namespace DataUtils {
 
 /*
 DataUtils::DataUtils()
 {}
 */
+
+} } // end namespace

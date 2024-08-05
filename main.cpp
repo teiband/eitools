@@ -12,4 +12,5 @@ int main() {
 
     eitools::SignalFilters::MovingAvgFilter mav_filt(6, 10);
     mav_filt.filter(d_arr1, d_arr2);
+
 }

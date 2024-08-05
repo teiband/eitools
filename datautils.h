@@ -25,6 +25,7 @@ private:
 };
 */
 
+
 template<typename T, typename U>
 void insertArrayIntoVector(T arr[], size_t size, std::vector<U> &vec) {
     vec.insert(vec.begin(), &arr[0], &arr[size]);
